@@ -5,6 +5,7 @@ query categoryList($id: Int!) {
         children {
             id
             name
+            include_in_menu
             url_key
             url_path
             children_count

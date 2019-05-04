@@ -78,12 +78,16 @@ class CategoryList extends Component {
 
                         return (
                             <div className={classes.content}>
-                                {data.category.children.map(item => (
-                                    <CategoryTile
-                                        item={this.mapCategory(item)}
-                                        key={item.url_key}
-                                    />
-                                ))}
+                                {data.category.children.map(item => {
+                                    if(item.include_in_menu){
+                                        return (
+                                            <CategoryTile
+                                                item={this.mapCategory(item)}
+                                                key={item.url_key}
+                                            />
+                                        );
+                                    }
+                                })}
                             </div>
                         );
                     }}
